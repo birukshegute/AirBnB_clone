@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """A class User that inherits from BaseModel."""
-import BaseModel from base_model
+from models.base_model import BaseModel
 
-Class User(Basemodel)
-"""A class to register Users
+Class User(Basemodel):
+    """A class User
 
     Attributes:
     email: string - empty string
