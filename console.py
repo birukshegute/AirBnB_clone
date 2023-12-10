@@ -56,11 +56,11 @@ class HBNBCommand(cmd.Cmd):
     def default(self, arg):
         """Cmd module default response when input is invalid"""
         argdict = {
-            "all": self.all,
-            "show": self.show,
-            "destroy": self.destroy,
-            "count": self.count,
-            "update": self.update
+            "all": self.do_all,
+            "show": self.do_show,
+            "destroy": self.do_destroy,
+            "count": self.do_count,
+            "update": self.do_update
         }
         match = re.search(r"\.", arg)
         if match is not None:
@@ -74,16 +74,16 @@ class HBNBCommand(cmd.Cmd):
         print("*** Unknown syntax: {}".format(arg))
         return False
 
-    def quit(self, arg):
+    def do_quit(self, arg):
         """Quit command that exits the program."""
         return True
 
-    def EOF(self, arg):
+    def do_EOF(self, arg):
         """EOF signal, exits the program."""
         print("")
         return True
 
-    def create(self, arg):
+    def do_create(self, arg):
         """Syntax: create <class>
         Creates a new class instance and print its id number.
         """
@@ -96,7 +96,7 @@ class HBNBCommand(cmd.Cmd):
             print(eval(argl[0])().id)
             storage.save()
 
-    def show(self, arg):
+    def do_show(self, arg):
         """Syntax: show <class> <id> or <class>.show(<id>)
         Prints the string representation of a class of a given id.
         """
@@ -130,7 +130,7 @@ class HBNBCommand(cmd.Cmd):
             del objdict["{}.{}".format(argl[0], argl[1])]
             storage.save()
 
-    def all(self, arg):
+    def do_all(self, arg):
         """Syntax: all or all <class> or <class>.all()
         Prints the string representations of all instances of a class.
         If no specified class, displays all instances of all classes."""
@@ -146,7 +146,7 @@ class HBNBCommand(cmd.Cmd):
                     objl.append(obj.__str__())
             print(objl)
 
-    def count(self, arg):
+    def do_count(self, arg):
         """Syntax: count <class> or <class>.count()
         Counts the number of instances of a given class."""
         argl = parse(arg)
