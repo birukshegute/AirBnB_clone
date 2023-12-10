@@ -17,17 +17,17 @@ def parse(arg):
     curly_brackets = re.search(r"\{(.*?)\}", arg)
     bracket = re.search(r"\[(.*?)\]", arg)
     if curly_brackets is None:
-        if brackets is None:
+        if bracket is None:
             return [i.strip(",") for i in split(arg)]
         else:
-            lexer = split(arg[:brackets.span()[0]])
+            lexer = split(arg[:bracket.span()[0]])
             retl = [i.strip(",") for i in lexer]
-            retl.append(brackets.group())
+            retl.append(bracket.group())
             return retl
     else:
-        lexer = split(arg[:curly_braces.span()[0]])
+        lexer = split(arg[:curly_brackets.span()[0]])
         retl = [i.strip(",") for i in lexer]
-        retl.append(curly_braces.group())
+        retl.append(curly_brackets.group())
         return retl
 
 
