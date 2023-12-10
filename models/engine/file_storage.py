@@ -10,17 +10,16 @@ from models.amenity import Amenity
 from models.review import Review
 
 Class FileStorage:
-    """ Class that seriaizes the  instances to a JSON file 
+    """ Class that seriaizes the  instances to a JSON file
     and deserializes JSON file to instances
 
     Attributes:
         __file_path: string - path to the JSON file.
         __objects: dictionary - will store all objects by <class name>.id
-    
     """
     self.__file_path = "file.json"
     self.__objects = ""
-    
+
     def all(self):
         """ returns the dictionary __objects"""
         return FileStorage.__objects
