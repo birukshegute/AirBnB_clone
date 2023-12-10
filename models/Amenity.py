@@ -2,6 +2,7 @@
 """ File containig Amenity"""
 from models.base_model import BaseModel
 
+
 class Amenity(BaseModel):
     """ A Class Amenity
     Attribute:
