@@ -6,10 +6,10 @@ Class User(Basemodel):
     """A class User
 
     Attributes:
-    email: string - empty string
-    password: string - empty string
-    first_name: string - empty string
-    last_name: string - empty string"""
+        email: string - empty string
+        password: string - empty string
+        first_name: string - empty string
+        last_name: string - empty string"""
     email = ""
     password = ""
     first_name = ""
