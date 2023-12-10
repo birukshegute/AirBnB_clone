@@ -16,7 +16,7 @@ class BaseModel:
             **kwargs(dictionary): Atrributes key/value pairing.
         """
         time_form = "%Y-%m-%dT%H:%M:%S.%f"
-        self.id = str(uuid())
+        self.id = str(uuid4())
         self.created_at = datetime.today()
         self.updated_at = datetime.today()
         if len(kwargs) != 0:
