@@ -6,16 +6,26 @@ from datetime import datetime
 
 Class BaseModel:
     """Represents the Basemodel of the project"""
+
     def __init__(self, *args, **kwargs):
         """ Initializing BaseModel
 
-        Args:
+        Arguments:
             *args: unused
             **kwargs(dictionary): Atrributes key/value pairing.
         """
+        time_form = "%Y-%m-%dT%H:%M:%S.%f"
         self.id = str(uuid())
         self.created_at = datetime.today()
         self.updated_at = datetime.today()
+        if len(kwargs) != 0:
+            for i, j in kwargs.items():
+                if i == "created_at" or i == "updated_at":
+                    self.__dict__[i] = datetime.strptime(j, tform)
+                else:
+                    self.__dict__[i] = j
+        else:
+            models.storage.new(self)
 
     def save(self):
         """Updating updated_at with the current datetime."""
@@ -35,5 +45,5 @@ Class BaseModel:
 
     def __str__(self):
         """Returns the string representation of the BaseModel instance."""
-        clname = self.__class__.__name__
-        return "[{}] ({}) {}".format(clname, self.id, self.__dict__)
+        class_name = self.__class__.__name__
+        return "[{}] ({}) {}".format(class_name, self.id, self.__dict__)
