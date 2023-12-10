@@ -2,7 +2,7 @@
 """A class User that inherits from BaseModel."""
 from models.base_model import BaseModel
 
-Class User(Basemodel):
+class User(Basemodel):
     """ A class User.
 
     Attributes:
