@@ -5,7 +5,7 @@ from uuid import uuid4
 from datetime import datetime
 
 
-Class BaseModel:
+class BaseModel:
     """Represents the Basemodel of the project"""
 
     def __init__(self, *args, **kwargs):
