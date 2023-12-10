@@ -4,6 +4,7 @@ import models
 from uuid import uuid4
 from datetime import datetime
 
+
 Class BaseModel:
     """Represents the Basemodel of the project"""
 

@@ -9,6 +9,7 @@ from models.place import Place
 from models.amenity import Amenity
 from models.review import Review
 
+
 Class FileStorage:
     """ Class that seriaizes the  instances to a JSON file
     and deserializes JSON file to instances

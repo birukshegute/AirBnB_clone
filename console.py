@@ -12,6 +12,7 @@ from models.place import Place
 from models.amenity import Amenity
 from models.review import Review
 
+
 def parse(arg):
     curly_brackets = re.search(r"\{(.*?)\}", arg)
     bracket = re.search(r"\[(.*?)\]", arg)
