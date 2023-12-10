@@ -113,7 +113,7 @@ class HBNBCommand(cmd.Cmd):
         else:
             print(objdict["{}.{}".format(argl[0], argl[1])])
 
-    def destroy(self, arg):
+    def do_destroy(self, arg):
         """Syntax: destroy <class> <id> or <class>.destroy(<id>)
         Deletes a class instance of a given id."""
         argl = parse(arg)
